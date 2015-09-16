@@ -2,6 +2,12 @@ This repo is cenetered around a Docker container for a ROS
 workspace designed to control the barrett hand and staubli
 robotic arm. It is currently a work in progess.
 
+Dependencies:
+-------------
+[Docker](https://docs.docker.com/installation/ubuntulinux/)
+
+[ROS](http://wiki.ros.org/hydro/Installation/Ubuntu) (if you
+want to interact with the server from the host machine)
 
 Currently implemented:
 ======================
