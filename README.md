@@ -22,10 +22,10 @@ Building the container image:
 
 Running the robot:
 ==================
-`docker run -d --privileged -p 11311:11311 curg-robot-server`
-This will spin up a *robot-server* in the background, launching 
-rosmaster on port 11311. 
+`docker run -d --privileged curg-robot-server`
+This will spin up a *robot-server* in the background. The server will automatically connect to a rosmaster running on docker's host machine (port 11311). 
 
 To run the container in interactive mode in a bash shell you can
 run the following command:
-`docker run --privileged -p 11311:11311 -ti curg-robot-server bash`
+`docker run --privileged -ti curg-robot-server bash`
+

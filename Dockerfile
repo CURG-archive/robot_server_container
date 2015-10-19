@@ -74,5 +74,4 @@ RUN source /opt/ros/hydro/setup.bash && catkin_make
 EXPOSE 11311
 RUN echo "source /opt/curg/robot_server/devel/setup.bash" >> /root/.bashrc.curg
 RUN echo "source /root/.bashrc.curg" >> /root/.bashrc
-ENTRYPOINT source /root/.bashrc.curg && roslaunch bhand_controller bhand_controller.launch
-#ENTRYPOINT roslaunch bhand_controller bhand_controller.launch
+ENTRYPOINT export ROS_MASTER_URI=http://$(/sbin/ip route|awk '/default/ { print $3 }'):11311/ && source /root/.bashrc.curg && roslaunch bhand_controller bhand_controller.launch
