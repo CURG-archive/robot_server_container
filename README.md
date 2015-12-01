@@ -22,8 +22,9 @@ Building the container image:
 
 Running the robot:
 ==================
-`docker run -d --privileged curg-robot-server`
+`docker run -d --net host --privileged curg-robot-server`
 This will spin up a *robot-server* in the background. The server will automatically connect to a rosmaster running on docker's host machine (port 11311). 
+Note: the `--net host` option forces the container to use the host's network adapter (and namespace) rather than spinning up it's own. If you know how to get the container's indiviual IP address and are comfortable doing some advanced networking with ROS you can just use the container's IP and ports for each topic/service to free up space in your local namespace. 
 
 To run the container in interactive mode in a bash shell you can
 run the following command:
