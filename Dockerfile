@@ -63,6 +63,9 @@ RUN mv /opt/curg/temp/barrett_hand-hydro-devel/barrett_hand /opt/curg/robot_serv
 RUN mv /opt/curg/temp/barrett_hand-hydro-devel/bhand_controller /opt/curg/robot_server/src/
 RUN mv /opt/curg/temp/barrett_hand-hydro-devel/bhand_description /opt/curg/robot_server/src/
 
+# ===== Custom  joint-names for bhand =====
+ADD ./bhand.yaml /opt/curg/robot_server/src/bhand_controller/config/bhand.yaml
+
 # ===== Cleanup! =====
 RUN rm -rf /opt/curg/temp/*
 
